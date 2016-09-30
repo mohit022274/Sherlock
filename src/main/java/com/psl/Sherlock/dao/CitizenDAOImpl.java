@@ -1,5 +1,9 @@
 package com.psl.Sherlock.dao;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.math.BigInteger;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -22,13 +26,9 @@ public class CitizenDAOImpl implements ICitizenDAO {
 		return template;
 	}
 
-
-
 	public void setTemplate(JdbcTemplate template) {
 		this.template = template;
 	}
-
-
 
 	@Override
 	public Citizen getCitizenDetails(String country, String id) {
@@ -50,9 +50,34 @@ public class CitizenDAOImpl implements ICitizenDAO {
 				citizen.setSkin_color(rs.getString("skin_color"));
 				citizen.setEmail(rs.getString("email"));
 				citizen.setFingerPrint(rs.getBlob("fingerprint"));
-				citizen.setPhoto(rs.getBlob("photo"));
-				citizen.setPh(rs.getBytes("photo"));
 				
+				
+				
+				File image = new File("/Sherlock/src/main/webapp/resources/sampleImages/newImage.jpg");
+				try {
+					image.createNewFile();
+
+					FileOutputStream fos = new FileOutputStream(image);
+
+					byte[] buffer = new byte[1];
+					InputStream is = rs.getBinaryStream("fingerprint");
+
+					while (is.read(buffer) > 0) {
+						fos.write(buffer);
+					} 
+					fos.close();
+				}
+				catch (IOException e1) {
+					e1.printStackTrace();
+				} 
+
+					// conn.close();
+			  
+				
+				
+				/*citizen.setPhoto(rs.getBlob("photo"));
+				citizen.setPh(rs.getBytes("photo"));
+				*/
 				
 //				System.out.println(
 //						
