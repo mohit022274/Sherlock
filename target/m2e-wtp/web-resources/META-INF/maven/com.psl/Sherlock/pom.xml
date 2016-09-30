@@ -276,7 +276,6 @@
 			<url>https://oss.sonatype.org/content/repositories/springsource-milestones</url>
 		</repository>
 	</repositories>
-
 	<build>
 		<finalName>bloodbank</finalName>
 		<plugins>

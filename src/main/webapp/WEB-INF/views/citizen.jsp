@@ -31,10 +31,10 @@
 				<td>${citizen.getWeight()}</td>
 				<td>${citizen.getSkin_color()}</td>
 				<td>${citizen.getEmail()}</td>
-				<td>${citizen.getPh()}</td>	
+				<td>${citizen.getPh()}</td>
+				<td><img alt="" src="../../../java/com/psl/Sherlock/dao/photo.jpg"></td>
 			</tr>
-		</table>
-	
+		</table>	
 	</sf:form>
 </body>
 </html>

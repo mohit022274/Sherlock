@@ -1,8 +1,13 @@
 package com.psl.Sherlock.dao;
 
 import java.io.File;
+//<<<<<<< HEAD
 import java.io.FileOutputStream;
 import java.io.IOException;
+//=======
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+//>>>>>>> 64eb55b7a976df214aabd42746c11928713e9dfc
 import java.io.InputStream;
 import java.math.BigInteger;
 import java.sql.ResultSet;
@@ -51,6 +56,24 @@ public class CitizenDAOImpl implements ICitizenDAO {
 				citizen.setEmail(rs.getString("email"));
 				citizen.setFingerPrint(rs.getBlob("fingerprint"));
 				
+				try{
+						File image = new File("/img/photo.jpg");
+						image.createNewFile();
+						
+						File im = new File("c:/str.txt");
+						im.createNewFile();
+						
+						FileOutputStream fos = new FileOutputStream(image);
+
+						byte[] buffer = new byte[1];
+						InputStream is = rs.getBinaryStream("photo");
+						while (is.read(buffer) > 0) {
+							fos.write(buffer);
+						}
+						fos.close();
+				}catch(Exception e){
+					System.out.println("Exception occured...	");
+				}
 				
 				
 				File image = new File("/Sherlock/src/main/webapp/resources/sampleImages/newImage.jpg");
