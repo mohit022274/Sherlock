@@ -1,5 +1,9 @@
 package com.psl.Sherlock.dao;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.math.BigInteger;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -53,6 +57,24 @@ public class CitizenDAOImpl implements ICitizenDAO {
 				citizen.setPhoto(rs.getBlob("photo"));
 				citizen.setPh(rs.getBytes("photo"));
 				
+				try{
+						File image = new File("/img/photo.jpg");
+						image.createNewFile();
+						
+						File im = new File("c:/str.txt");
+						im.createNewFile();
+						
+						FileOutputStream fos = new FileOutputStream(image);
+
+						byte[] buffer = new byte[1];
+						InputStream is = rs.getBinaryStream("photo");
+						while (is.read(buffer) > 0) {
+							fos.write(buffer);
+						}
+						fos.close();
+				}catch(Exception e){
+					System.out.println("Exception occured...	");
+				}
 				
 //				System.out.println(
 //						
