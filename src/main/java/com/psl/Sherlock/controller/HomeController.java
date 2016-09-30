@@ -56,16 +56,28 @@ public class HomeController {
 		return new ModelAndView("home");
 	}
 	
+	
+	
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	
 	@RequestMapping(value="/citizen",method=RequestMethod.GET)
-	public ModelAndView getCitizenDetails(HttpServletRequest request,HttpServletResponse response,Model model,@RequestParam String id){
+	public ModelAndView getCitizenDetailsGET(HttpServletRequest request,HttpServletResponse response,Model model){
+		
+		model.addAttribute(new Citizen());
+		return new ModelAndView("search");
+	}
+	@RequestMapping(value="/citizen",method=RequestMethod.POST )
+	public ModelAndView getCitizenDetailsPOST(HttpServletRequest request,HttpServletResponse response,Model model, Citizen citizen){
 		//System.out.println(country+" "+id);
+		
+		System.out.println("Welcome Citizen Search" );
 		initializeContext(request);
 		String country="in";
 		c_service=(CitizenService)context.getBean("citizen_service");
-		Citizen citizen=c_service.getCitizenDetails(country,id);
-		
+	    citizen=c_service.getCitizenDetails(country,citizen.getUIN().toString());
 		model.addAttribute("citizen",citizen);
-		
 		System.out.println(
 				
 				"UIN :"+citizen.getUIN()+
@@ -76,47 +88,92 @@ public class HomeController {
 				"\nWeight :"+citizen.getWeight()+
 				"\nSkin Color :"+citizen.getSkin_color()+
 				"\nEmail :"+citizen.getEmail()
-				);
-		
+				);	
 		return new ModelAndView("citizen");
 	}
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	@RequestMapping(value="/criminal",method=RequestMethod.GET)
-	public ModelAndView getCriminalDetails(HttpServletRequest request,HttpServletResponse response,Model model,@RequestParam String id){
+	public ModelAndView getCriminalDetailsGET(HttpServletRequest request,HttpServletResponse response,Model model){
+		model.addAttribute(new Citizen());
+		return new ModelAndView("search");
+	}
+	@RequestMapping(value="/criminal",method=RequestMethod.POST)
+	public ModelAndView getCriminalDetailsPOST(HttpServletRequest request,HttpServletResponse response,Model model, Citizen citizen){
 		
+		System.out.println("Welcome Criminal Search" );
 		String country="in";
 		System.out.println(country);
-		
-		
 		initializeContext(request);
 		
 		cd_service=(CriminalDetailsService)context.getBean("criminal_details_service");
-		
-		List<Criminal> criminal=cd_service.getCriminalDetails(country, id);
-		
+		List<Criminal> criminal=cd_service.getCriminalDetails(country, citizen.getUIN().toString());
 		model.addAttribute("criminal",criminal);		
-		
 		for(Criminal crime:criminal)
 			System.out.println(crime.getDescription());
-		
 		return new ModelAndView("criminal_record");
 	}
 	
-	@RequestMapping(value="/credit_history")
-	public ModelAndView getCreditHistoryDetails(HttpServletRequest request,HttpServletResponse response,Model model,@RequestParam String id){
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	@RequestMapping(value="/credit" ,  method = RequestMethod.GET)
+	public ModelAndView getCreditHistoryDetailsGET(HttpServletRequest request,HttpServletResponse response,Model model){
+		model.addAttribute(new Citizen());
+		return new ModelAndView("search");
+	}
+	
+	
+	@RequestMapping(value="/credit" ,  method = RequestMethod.POST)
+	public ModelAndView getCreditHistoryDetailsPOST(HttpServletRequest request,HttpServletResponse response,Model model,Citizen citizen){
 //		System.out.println(country);
+		System.out.println("Welcome Credit Search" );
 		String country="in";
-		
 		initializeContext(request);
 		ch_service=(CreditHistoryService)context.getBean("credit_history_service");
-		
-		List<CreditHistory> credit_history=ch_service.getCreditDetails(country, id);
-		
+		List<CreditHistory> credit_history=ch_service.getCreditDetails(country, citizen.getUIN().toString());
 		model.addAttribute("credit_history",credit_history);
-		
 		for(CreditHistory cd: credit_history)
-			System.out.println(cd.getBankName());
-		
+			System.out.println(cd.getBankName());	
 		return new ModelAndView("credit_history");
 	}
+/*
+  @RequestMapping(value ={ "/citizen"}, method = RequestMethod.GET)
+  public String ShowSearchPageCitizen(Model model)
+	{
+		model.addAttribute(new Citizen());
+		return "search";
+	}
+	@RequestMapping(value = { "/citizen"}, method = RequestMethod.POST)
+	public String saveUIDCitizen(Citizen citizen)
+	{ 
+		System.out.println("Welcome To Citizen Searh" + citizen.getUIN());
+		return "search";
+	}
+	@RequestMapping(value ={ "/criminal"}, method = RequestMethod.GET)
+	public String ShowSearchPageCriminal(Model model)
+	{
+		model.addAttribute(new Citizen());
+		//model.addAttribute("val",val);
+		return "search";
+	}
+	@RequestMapping(value = { "/criminal"}, method = RequestMethod.POST  )
+	public String saveUIDCriminal(Citizen citizen)
+	{ 
+		System.out.println("Welcome To Criminal Search" + citizen.getUIN());
+		return "search";
+	}
+	@RequestMapping(value ={ "/credit"}, method = RequestMethod.GET)
+	public String ShowSearchPageCredit(Model model)
+	{
+		model.addAttribute(new Citizen());
+		//model.addAttribute("val",val);
+		return "search";
+	}
+	@RequestMapping(value = { "/credit"}, method = RequestMethod.POST  )
+	public String saveUIDCredit(Citizen citizen)
+	{ 
+		System.out.println("Welcome Credit Search" + citizen.getUIN());
+		return "search";
+	}
+	*/
 }
