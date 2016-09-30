@@ -12,9 +12,10 @@
         <h1>Hello World!</h1>
         <p>This is the Homepage!</p>
         <ul>
-        	<li>Citizen</li>
-        	<li>Criminal</li>
-        	<li>Cedit History</li>
+        	<li><a href="http://localhost:8080/Sherlock/citizen">Citizen</a></li>
+        	<li><a href="http://localhost:8080/Sherlock/criminal">Criminal</a></li>
+        	<li><a href="http://localhost:8080/Sherlock/credit">Credit</a></li>
         </ul>
     </body>
 </html>
+
