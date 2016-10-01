@@ -20,9 +20,9 @@ public class CitizenService {
 		this.dao = dao;
 	}
 
-	public Citizen getCitizenDetails(String country, String id){
-		System.out.println(country+" "+id);
-		Citizen citizen=dao.getCitizenDetails(country, id);
+	public Citizen getCitizenDetails(String id){
+		//System.out.println(country+" "+id);
+		Citizen citizen=dao.getCitizenDetails(id);
 		return citizen;
 	}
 }

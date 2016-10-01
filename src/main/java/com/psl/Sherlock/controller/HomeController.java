@@ -1,10 +1,13 @@
 package com.psl.Sherlock.controller;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.lang.reflect.Method;
 import java.sql.SQLException;
+import java.util.Base64;
 import java.util.List;
 
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.swing.text.html.FormSubmitEvent.MethodType;
@@ -69,17 +72,19 @@ public class HomeController {
 		return new ModelAndView("search");
 	}
 	@RequestMapping(value="/citizen",method=RequestMethod.POST )
-	public ModelAndView getCitizenDetailsPOST(HttpServletRequest request,HttpServletResponse response,Model model, Citizen citizen){
-		//System.out.println(country+" "+id);
+	public ModelAndView getCitizenDetailsPOST(HttpServletRequest request,HttpServletResponse response,Model model, Citizen citizen) throws IOException, SQLException{
+			
+		
+		System.out.println( request.getSession().getServletContext().getRealPath(""));
 		
 		System.out.println("Welcome Citizen Search" );
 		initializeContext(request);
 		String country="in";
 		c_service=(CitizenService)context.getBean("citizen_service");
-	    citizen=c_service.getCitizenDetails(country,citizen.getUIN().toString());
+	    citizen=c_service.getCitizenDetails(citizen.getUIN().toString());
 		model.addAttribute("citizen",citizen);
 		System.out.println(
-				
+					
 				"UIN :"+citizen.getUIN()+
 				"\nName :"+citizen.getF_name()+" "+citizen.getL_name()+
 				"\nCountry :"+citizen.getCountry()+
@@ -88,7 +93,31 @@ public class HomeController {
 				"\nWeight :"+citizen.getWeight()+
 				"\nSkin Color :"+citizen.getSkin_color()+
 				"\nEmail :"+citizen.getEmail()
-				);	
+				);		
+		
+		 byte[ ] imgData = null ; 
+		 imgData = citizen.getPhoto().getBytes(1,(int)citizen.getPhoto().length());
+				
+		String imgDataBase64=new String(Base64.getEncoder().encode(imgData));
+		model.addAttribute("imgDataBase64", imgDataBase64);
+		
+//		ServletOutputStream out = response.getOutputStream();
+//    	InputStream in = citizen.getPhoto().getBinaryStream();
+//    	int lenght = (int)citizen.getPhoto().length();
+//    	int bufferSize = 1024;
+//    	byte[] buffer = new byte[bufferSize];
+//
+//    //	response.setContentType("");
+//    	while((lenght = in.read(buffer)) != -1) {
+//    		out.write(buffer, 0, lenght);
+//    	}
+//    	in.close();
+//    	out.flush();
+		
+		
+		
+		
+		
 		return new ModelAndView("citizen");
 	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////

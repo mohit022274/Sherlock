@@ -35,10 +35,9 @@ public class CitizenDAOImpl implements ICitizenDAO {
 
 
 	@Override
-	public Citizen getCitizenDetails(String country, String id) {
+	public Citizen getCitizenDetails(String id) {
 		// TODO Auto-generated method stub
-		
-		Citizen citizen=(Citizen)template.queryForObject("select * from "+country+"_person where uin="+id, new RowMapper<Citizen>(){
+		Citizen citizen=(Citizen)template.queryForObject("select * from person where uin="+id, new RowMapper<Citizen>(){
 
 			@Override
 			public Citizen mapRow(ResultSet rs, int arg1) throws SQLException {
@@ -57,16 +56,18 @@ public class CitizenDAOImpl implements ICitizenDAO {
 				citizen.setPhoto(rs.getBlob("photo"));
 				citizen.setPh(rs.getBytes("photo"));
 				
+				
+				
 				try{
-						File image = new File("/img/photo.jpg");
+						File image = new File("/photo.jpg");
 						image.createNewFile();
 						
-						File im = new File("c:/str.txt");
+						File im = new File("webapp/images/str.txt");	
 						im.createNewFile();
 						
 						FileOutputStream fos = new FileOutputStream(image);
 
-						byte[] buffer = new byte[1];
+						byte[] buffer = new byte[3];
 						InputStream is = rs.getBinaryStream("photo");
 						while (is.read(buffer) > 0) {
 							fos.write(buffer);

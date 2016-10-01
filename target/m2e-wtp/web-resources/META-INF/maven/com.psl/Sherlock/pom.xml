@@ -277,7 +277,7 @@
 		</repository>
 	</repositories>
 	<build>
-		<finalName>bloodbank</finalName>
+		<finalName>Sherlock</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -290,4 +290,6 @@
 			</plugin>
 		</plugins>
 	</build>
+	
+
 </project>
