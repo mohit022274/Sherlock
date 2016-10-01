@@ -666,6 +666,195 @@
 			</build>
 		</profile>
 	
+			<profile>
+			<id>inProd</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<version>1.1</version>
+						<executions>
+							<execution>
+								<phase>test</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<tasks>
+										<delete file="${project.build.outputDirectory}/env.is.stage.properties"/>
+										<delete file="${project.build.outputDirectory}/env.is.prod.properties"/>										
+										<delete file="${project.build.outputDirectory}env.is.qa.properties"/>
+										
+										<delete file="${project.build.outputDirectory}/env.us.stage.properties"/>
+										<delete file="${project.build.outputDirectory}/env.us.prod.properties"/>										
+										<delete file="${project.build.outputDirectory}env.us.qa.properties"/>
+									
+										<delete file="${project.build.outputDirectory}/env.properties"/>
+										<delete file="${project.build.outputDirectory}/env.in.qa.properties"/>
+										<delete file="${project.build.outputDirectory}/env.in.stage.properties"/>										
+										<copy file="src/main/resources/env.in.prod.properties"
+											tofile="${project.build.outputDirectory}/env.properties" />
+											
+										<delete file="${project.build.outputDirectory}/env.in.prod.properties"/>
+									</tasks>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<configuration>
+							<skip>true</skip>
+						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+        				<artifactId>maven-war-plugin</artifactId>
+        				<version>2.3</version>
+        				<configuration>
+        					<warName>Sherlock_IN</warName>
+        				</configuration>
+						<executions>
+							<execution>
+								<phase>package</phase>
+								<goals>
+									<goal>war</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+		<profile>
+			<id>usProd</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<version>1.1</version>
+						<executions>
+							<execution>
+								<phase>test</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<tasks>
+										<delete file="${project.build.outputDirectory}/env.in.stage.properties"/>
+										<delete file="${project.build.outputDirectory}/env.in.prod.properties"/>										
+										<delete file="${project.build.outputDirectory}/env.in.qa.properties"/>
+										
+										<delete file="${project.build.outputDirectory}/env.is.stage.properties"/>
+										<delete file="${project.build.outputDirectory}/env.is.prod.properties"/>										
+										<delete file="${project.build.outputDirectory}/env.is.qa.properties"/>
+									
+									
+										<delete file="${project.build.outputDirectory}/env.properties"/>
+										<delete file="${project.build.outputDirectory}/env.us.qa.properties"/>
+										<delete file="${project.build.outputDirectory}/env.us.stage.properties"/>										
+										<copy file="src/main/resources/env.us.prod.properties"
+											tofile="${project.build.outputDirectory}/env.properties" />
+											
+										<delete file="${project.build.outputDirectory}/env.us.prod.properties"/>
+									</tasks>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<configuration>
+							<skip>true</skip>
+						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+        				<artifactId>maven-war-plugin</artifactId>
+        				<version>2.3</version>
+        				<configuration>
+        					<warName>Sherlock_US</warName>
+        				</configuration>
+						<executions>
+							<execution>
+								<phase>package</phase>
+								<goals>
+									<goal>war</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+
+		<profile>
+			<id>isProd</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<version>1.1</version>
+						<executions>
+							<execution>
+								<phase>test</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<tasks>
+										<delete file="${project.build.outputDirectory}/env.in.stage.properties"/>
+										<delete file="${project.build.outputDirectory}/env.in.prod.properties"/>										
+										<delete file="${project.build.outputDirectory}/env.in.qa.properties"/>
+										
+										<delete file="${project.build.outputDirectory}/env.us.stage.properties"/>
+										<delete file="${project.build.outputDirectory}/env.us.prod.properties"/>										
+										<delete file="${project.build.outputDirectory}/env.us.qa.properties"/>
+									
+									
+										<delete file="${project.build.outputDirectory}/env.properties"/>
+										<delete file="${project.build.outputDirectory}/env.is.qa.properties"/>
+										<delete file="${project.build.outputDirectory}/env.is.stage.properties"/>										
+										<copy file="src/main/resources/env.is.prod.properties"
+											tofile="${project.build.outputDirectory}/env.properties" />
+											
+										<delete file="${project.build.outputDirectory}/env.is.prod.properties"/>
+									</tasks>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<configuration>
+							<skip>true</skip>
+						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+        				<artifactId>maven-war-plugin</artifactId>
+        				<version>2.3</version>
+        				<configuration>
+        					<warName>Sherlock_IS</warName>
+        				</configuration>
+						<executions>
+							<execution>
+								<phase>package</phase>
+								<goals>
+									<goal>war</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	
 	
 	
 	
