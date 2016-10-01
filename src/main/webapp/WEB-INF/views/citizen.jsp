@@ -31,8 +31,8 @@
 				<td>${citizen.getWeight()}</td>
 				<td>${citizen.getSkin_color()}</td>
 				<td>${citizen.getEmail()}</td>
-				<td>${citizen.getPh()}</td>
-				<td><img alt="" src="../../../java/com/psl/Sherlock/dao/photo.jpg"></td>
+				<td><img alt="" src="data:image/gif;base64,${imgDataBase64}" width="250" height="250"></td>
+
 			</tr>
 		</table>	
 	</sf:form>

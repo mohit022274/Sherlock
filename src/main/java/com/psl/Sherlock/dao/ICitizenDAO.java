@@ -3,5 +3,5 @@ package com.psl.Sherlock.dao;
 import com.psl.Sherlock.entity.Citizen;
 
 public interface ICitizenDAO {
-	public Citizen getCitizenDetails(String country, String id);
+	public Citizen getCitizenDetails(String id);
 }
