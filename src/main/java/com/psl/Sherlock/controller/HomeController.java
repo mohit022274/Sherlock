@@ -136,7 +136,7 @@ public class HomeController {
 		initializeContext(request);
 		
 		cd_service=(CriminalDetailsService)context.getBean("criminal_details_service");
-		List<Criminal> criminal=cd_service.getCriminalDetails(country, citizen.getUIN().toString());
+		List<Criminal> criminal=cd_service.getCriminalDetails(citizen.getUIN().toString());
 		model.addAttribute("criminal",criminal);		
 		for(Criminal crime:criminal)
 			System.out.println(crime.getDescription());
@@ -159,7 +159,7 @@ public class HomeController {
 		String country="in";
 		initializeContext(request);
 		ch_service=(CreditHistoryService)context.getBean("credit_history_service");
-		List<CreditHistory> credit_history=ch_service.getCreditDetails(country, citizen.getUIN().toString());
+		List<CreditHistory> credit_history=ch_service.getCreditDetails(citizen.getUIN().toString());
 		model.addAttribute("credit_history",credit_history);
 		for(CreditHistory cd: credit_history)
 			System.out.println(cd.getBankName());	
