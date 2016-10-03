@@ -13,6 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.swing.text.html.FormSubmitEvent.MethodType;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -43,6 +47,12 @@ public class HomeController {
 	@Autowired
 	CreditHistoryService ch_service;
 	
+	@Value("${env.country}")
+	String country;
+	
+	@Autowired
+	Environment env;
+	
 	private XmlWebApplicationContext context;
 	
 	public void initializeContext(HttpServletRequest request){
@@ -55,7 +65,9 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="/")
-	public ModelAndView test(HttpServletResponse response) throws IOException{
+	public ModelAndView test(HttpServletResponse response,Model model) throws IOException{
+		System.out.println(env.getProperty("env.country"));
+		model.addAttribute("country",env.getProperty("env.country"));
 		return new ModelAndView("home");
 	}
 	
@@ -103,6 +115,8 @@ public class HomeController {
 		String imgDataBase64=new String(Base64.getEncoder().encode(imgData));
 		model.addAttribute("imgDataBase64", imgDataBase64);	
 		
+		
+		model.addAttribute("country",country);
 		
 		return new ModelAndView("citizen");
 	}

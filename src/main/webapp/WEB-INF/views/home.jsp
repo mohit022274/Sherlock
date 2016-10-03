@@ -9,8 +9,7 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Hello World!</h1>
-        <p>This is the Homepage!</p>
+        <h1>Welcome to Sherlock</h1><p align="right">${country}</p>
         <ul>
         	<li><a href="http://localhost:8080/Sherlock/citizen">Citizen</a></li>
         	<li><a href="http://localhost:8080/Sherlock/criminal">Criminal</a></li>
@@ -18,4 +17,3 @@
         </ul>
     </body>
 </html>
-

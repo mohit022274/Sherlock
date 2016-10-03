@@ -48,5 +48,4 @@
 	<bean class="com.psl.Sherlock.service.CreditHistoryService" id="credit_history_service">
 		<property name="dao" ref="creditHistoryDAO"></property>
 	</bean>
-
 </beans>

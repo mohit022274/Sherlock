@@ -54,6 +54,7 @@ public class CitizenDAOImpl implements ICitizenDAO {
 				citizen.setSkin_color(rs.getString("skin_color"));
 				citizen.setEmail(rs.getString("email"));
 				citizen.setFingerPrint(rs.getBlob("fingerprint"));
+				citizen.setPhoto(rs.getBlob("photo"));
 				
 				return citizen;
 			}});
