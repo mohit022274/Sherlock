@@ -27,10 +27,10 @@ public class CriminalDAOImpl implements ICriminalDAO {
 	}
 
 	@Override
-	public List<Criminal> getCriminalDetails(String country, String id) {
+	public List<Criminal> getCriminalDetails(String id) {
 		// TODO Auto-generated method stub
 		
-		List<Criminal> criminal=template.query("select * from "+country+"_criminal_record where criminalID="+id, new RowMapper<Criminal>(){
+		List<Criminal> criminal=template.query("select * from criminal_record where criminalID="+id, new RowMapper<Criminal>(){
 			@Override
 			public Criminal mapRow(ResultSet rs, int arg1) throws SQLException {
 				// TODO Auto-generated method stub

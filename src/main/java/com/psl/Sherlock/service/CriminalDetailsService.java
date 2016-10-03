@@ -21,7 +21,7 @@ public class CriminalDetailsService {
 		this.dao = dao;
 	}
 
-	public List<Criminal> getCriminalDetails(String country, String id){
-		return dao.getCriminalDetails(country, id);
+	public List<Criminal> getCriminalDetails(String id){
+		return dao.getCriminalDetails(id);
 	}
 }

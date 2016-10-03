@@ -81,6 +81,8 @@ public class HomeController {
 		initializeContext(request);
 		String country="in";
 		c_service=(CitizenService)context.getBean("citizen_service");
+		
+		System.out.println(citizen.getUIN().toString());
 	    citizen=c_service.getCitizenDetails(citizen.getUIN().toString());
 		model.addAttribute("citizen",citizen);
 		System.out.println(
@@ -99,23 +101,7 @@ public class HomeController {
 		 imgData = citizen.getPhoto().getBytes(1,(int)citizen.getPhoto().length());
 				
 		String imgDataBase64=new String(Base64.getEncoder().encode(imgData));
-		model.addAttribute("imgDataBase64", imgDataBase64);
-		
-//		ServletOutputStream out = response.getOutputStream();
-//    	InputStream in = citizen.getPhoto().getBinaryStream();
-//    	int lenght = (int)citizen.getPhoto().length();
-//    	int bufferSize = 1024;
-//    	byte[] buffer = new byte[bufferSize];
-//
-//    //	response.setContentType("");
-//    	while((lenght = in.read(buffer)) != -1) {
-//    		out.write(buffer, 0, lenght);
-//    	}
-//    	in.close();
-//    	out.flush();
-		
-		
-		
+		model.addAttribute("imgDataBase64", imgDataBase64);	
 		
 		
 		return new ModelAndView("citizen");
@@ -136,7 +122,7 @@ public class HomeController {
 		initializeContext(request);
 		
 		cd_service=(CriminalDetailsService)context.getBean("criminal_details_service");
-		List<Criminal> criminal=cd_service.getCriminalDetails(country, citizen.getUIN().toString());
+		List<Criminal> criminal=cd_service.getCriminalDetails(citizen.getUIN().toString());
 		model.addAttribute("criminal",criminal);		
 		for(Criminal crime:criminal)
 			System.out.println(crime.getDescription());
@@ -159,50 +145,10 @@ public class HomeController {
 		String country="in";
 		initializeContext(request);
 		ch_service=(CreditHistoryService)context.getBean("credit_history_service");
-		List<CreditHistory> credit_history=ch_service.getCreditDetails(country, citizen.getUIN().toString());
+		List<CreditHistory> credit_history=ch_service.getCreditDetails(citizen.getUIN().toString());
 		model.addAttribute("credit_history",credit_history);
 		for(CreditHistory cd: credit_history)
 			System.out.println(cd.getBankName());	
 		return new ModelAndView("credit_history");
 	}
-/*
-  @RequestMapping(value ={ "/citizen"}, method = RequestMethod.GET)
-  public String ShowSearchPageCitizen(Model model)
-	{
-		model.addAttribute(new Citizen());
-		return "search";
-	}
-	@RequestMapping(value = { "/citizen"}, method = RequestMethod.POST)
-	public String saveUIDCitizen(Citizen citizen)
-	{ 
-		System.out.println("Welcome To Citizen Searh" + citizen.getUIN());
-		return "search";
-	}
-	@RequestMapping(value ={ "/criminal"}, method = RequestMethod.GET)
-	public String ShowSearchPageCriminal(Model model)
-	{
-		model.addAttribute(new Citizen());
-		//model.addAttribute("val",val);
-		return "search";
-	}
-	@RequestMapping(value = { "/criminal"}, method = RequestMethod.POST  )
-	public String saveUIDCriminal(Citizen citizen)
-	{ 
-		System.out.println("Welcome To Criminal Search" + citizen.getUIN());
-		return "search";
-	}
-	@RequestMapping(value ={ "/credit"}, method = RequestMethod.GET)
-	public String ShowSearchPageCredit(Model model)
-	{
-		model.addAttribute(new Citizen());
-		//model.addAttribute("val",val);
-		return "search";
-	}
-	@RequestMapping(value = { "/credit"}, method = RequestMethod.POST  )
-	public String saveUIDCredit(Citizen citizen)
-	{ 
-		System.out.println("Welcome Credit Search" + citizen.getUIN());
-		return "search";
-	}
-	*/
 }

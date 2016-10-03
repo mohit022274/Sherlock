@@ -21,7 +21,7 @@ public class CreditHistoryService {
 		this.dao = dao;
 	}
 	
-	public List<CreditHistory> getCreditDetails(String country,String id){
-		return dao.getCreditHistoryDetails(country, id);
+	public List<CreditHistory> getCreditDetails(String id){
+		return dao.getCreditHistoryDetails(id);
 	}
 }

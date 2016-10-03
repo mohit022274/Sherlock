@@ -11,12 +11,12 @@
 <body>
 
 	<div>
-		<h2>Enter Person UIN</h2>
+		<h2>Enter ID</h2>
 		<sf:form name="form1" method="POST" modelAttribute="citizen">
 			<fieldset>
 				<table cellspacing="0">
 					<tr>
-						<th><label for="UIN"> Employee UIN : </label></th>
+						<th><label for="UIN"> ID : </label></th>
 						<td>
 						<sf:input path="UIN"  id="UIN" /> <small id="UIN">No Space , please </small>
 						</td>

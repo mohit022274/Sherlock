@@ -38,7 +38,7 @@ public class CitizenDAOImpl implements ICitizenDAO {
 	@Override
 	public Citizen getCitizenDetails(String id) {
 		// TODO Auto-generated method stub
-		Citizen citizen=(Citizen)template.queryForObject("select * from person where uin="+id, new RowMapper<Citizen>(){
+		Citizen citizen=(Citizen)template.queryForObject("select * from person where UIN="+id, new RowMapper<Citizen>(){
 
 			@Override
 			public Citizen mapRow(ResultSet rs, int arg1) throws SQLException {
@@ -54,67 +54,6 @@ public class CitizenDAOImpl implements ICitizenDAO {
 				citizen.setSkin_color(rs.getString("skin_color"));
 				citizen.setEmail(rs.getString("email"));
 				citizen.setFingerPrint(rs.getBlob("fingerprint"));
-				
-				
-				
-				try{
-						File image = new File("/photo.jpg");
-						image.createNewFile();
-						
-						File im = new File("webapp/images/str.txt");	
-						im.createNewFile();
-						
-						FileOutputStream fos = new FileOutputStream(image);
-
-						byte[] buffer = new byte[3];
-						InputStream is = rs.getBinaryStream("photo");
-						while (is.read(buffer) > 0) {
-							fos.write(buffer);
-						}
-						fos.close();
-				}catch(Exception e){
-					System.out.println("Exception occured...	");
-				}
-				
-				
-				File image = new File("/Sherlock/src/main/webapp/resources/sampleImages/newImage.jpg");
-				try {
-					image.createNewFile();
-
-					FileOutputStream fos = new FileOutputStream(image);
-
-					byte[] buffer = new byte[1];
-					InputStream is = rs.getBinaryStream("fingerprint");
-
-					while (is.read(buffer) > 0) {
-						fos.write(buffer);
-					} 
-					fos.close();
-				}
-				catch (IOException e1) {
-					e1.printStackTrace();
-				} 
-
-					// conn.close();
-			  
-				
-				
-				/*citizen.setPhoto(rs.getBlob("photo"));
-				citizen.setPh(rs.getBytes("photo"));
-				*/
-				
-//				System.out.println(
-//						
-//						"UIN :"+citizen.getF_name()+
-//						"\nName :"+citizen.getF_name()+" "+citizen.getL_name()+
-//						"\nCountry :"+citizen.getCountry()+
-//						"\nDOB :"+citizen.getDob()+
-//						"\nHeight :"+citizen.getHeight()+
-//						"\nWeight :"+citizen.getWeight()+
-//						"\nSkin Color :"+citizen.getSkin_color()+
-//						"\nEmail :"+citizen.getEmail()
-//						);
-				
 				
 				return citizen;
 			}});

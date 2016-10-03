@@ -29,11 +29,11 @@ public class CreditHistoryDAOImpl implements ICreditHistoryDAO {
 
 
 	@Override
-	public List<CreditHistory> getCreditHistoryDetails(String country, String id) {
+	public List<CreditHistory> getCreditHistoryDetails(String id) {
 		
 		// TODO Auto-generated method stub
 		
-		List<CreditHistory> credithistory=template.query("select * from "+country+"_credit_history where CustomerID="+id, new RowMapper<CreditHistory>(){
+		List<CreditHistory> credithistory=template.query("select * from credit_history where CustomerID="+id, new RowMapper<CreditHistory>(){
 
 				@Override
 		public CreditHistory mapRow(ResultSet rs, int arg1) throws SQLException {
