@@ -112,8 +112,8 @@ public class HomeController {
 		 byte[ ] imgData = null ; 
 		 imgData = citizen.getPhoto().getBytes(1,(int)citizen.getPhoto().length());
 				
-		String imgDataBase64=new String(Base64.getEncoder().encode(imgData));
-		model.addAttribute("imgDataBase64", imgDataBase64);	
+	/*	String imgDataBase64=new String(Base64.getEncoder().encode(imgData));
+		model.addAttribute("imgDataBase64", imgDataBase64);	*/
 		
 		
 		model.addAttribute("country",country);
@@ -156,7 +156,7 @@ public class HomeController {
 	public ModelAndView getCreditHistoryDetailsPOST(HttpServletRequest request,HttpServletResponse response,Model model,Citizen citizen){
 //		System.out.println(country);
 		System.out.println("Welcome Credit Search" );
-		String country="in";
+		//String country="in";
 		initializeContext(request);
 		ch_service=(CreditHistoryService)context.getBean("credit_history_service");
 		List<CreditHistory> credit_history=ch_service.getCreditDetails(citizen.getUIN().toString());
