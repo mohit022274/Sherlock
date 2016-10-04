@@ -340,7 +340,7 @@
         				<artifactId>maven-war-plugin</artifactId>
         				<version>2.3</version>
         				<configuration>
-        					<warName>Sherlock_IN_QA</warName>
+        					<warName>Sherlock</warName>
         				</configuration>
 						<executions>
 							<execution>
@@ -402,7 +402,7 @@
         				<artifactId>maven-war-plugin</artifactId>
         				<version>2.3</version>
         				<configuration>
-        					<warName>Sherlock_US_QA</warName>
+        					<warName>Sherlock</warName>
         				</configuration>
 						<executions>
 							<execution>
@@ -465,7 +465,7 @@
         				<artifactId>maven-war-plugin</artifactId>
         				<version>2.3</version>
         				<configuration>
-        					<warName>Sherlock_IS_QA</warName>
+        					<warName>Sherlock</warName>
         				</configuration>
 						<executions>
 							<execution>
@@ -526,7 +526,7 @@
         				<artifactId>maven-war-plugin</artifactId>
         				<version>2.3</version>
         				<configuration>
-        					<warName>Sherlock_IN_ST</warName>
+        					<warName>Sherlock</warName>
         				</configuration>
 						<executions>
 							<execution>
@@ -589,7 +589,7 @@
         				<artifactId>maven-war-plugin</artifactId>
         				<version>2.3</version>
         				<configuration>
-        					<warName>Sherlock_US_ST</warName>
+        					<warName>Sherlock</warName>
         				</configuration>
 						<executions>
 							<execution>
@@ -651,7 +651,7 @@
         				<artifactId>maven-war-plugin</artifactId>
         				<version>2.3</version>
         				<configuration>
-        					<warName>Sherlock_IS_ST</warName>
+        					<warName>Sherlock</warName>
         				</configuration>
 						<executions>
 							<execution>
@@ -713,7 +713,7 @@
         				<artifactId>maven-war-plugin</artifactId>
         				<version>2.3</version>
         				<configuration>
-        					<warName>Sherlock_IN</warName>
+        					<warName>Sherlock</warName>
         				</configuration>
 						<executions>
 							<execution>
@@ -776,7 +776,7 @@
         				<artifactId>maven-war-plugin</artifactId>
         				<version>2.3</version>
         				<configuration>
-        					<warName>Sherlock_US</warName>
+        					<warName>Sherlock</warName>
         				</configuration>
 						<executions>
 							<execution>
@@ -840,7 +840,7 @@
         				<artifactId>maven-war-plugin</artifactId>
         				<version>2.3</version>
         				<configuration>
-        					<warName>Sherlock_IS</warName>
+        					<warName>Sherlock</warName>
         				</configuration>
 						<executions>
 							<execution>
