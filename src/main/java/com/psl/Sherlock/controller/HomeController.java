@@ -112,8 +112,8 @@ public class HomeController {
 		 byte[ ] imgData = null ; 
 		 imgData = citizen.getPhoto().getBytes(1,(int)citizen.getPhoto().length());
 				
-	/*	String imgDataBase64=new String(Base64.getEncoder().encode(imgData));
-		model.addAttribute("imgDataBase64", imgDataBase64);	*/
+		String imgDataBase64=new String(Base64.getEncoder().encode(imgData));
+		model.addAttribute("imgDataBase64", imgDataBase64);
 		
 		
 		model.addAttribute("country",country);
