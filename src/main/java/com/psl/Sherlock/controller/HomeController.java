@@ -114,6 +114,7 @@ public class HomeController {
 				
 		String imgDataBase64=new String(Base64.getEncoder().encode(imgData));
 		model.addAttribute("imgDataBase64", imgDataBase64);
+		//
 		
 		
 		model.addAttribute("country",country);
