@@ -116,7 +116,7 @@ public class HomeController {
 		model.addAttribute("imgDataBase64", imgDataBase64);
 		//
 		
-		
+		 
 		model.addAttribute("country",country);
 		
 		return new ModelAndView("citizen");
