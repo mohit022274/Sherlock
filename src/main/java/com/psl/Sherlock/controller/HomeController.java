@@ -68,7 +68,7 @@ public class HomeController {
 	public ModelAndView test(HttpServletResponse response,Model model) throws IOException{
 		System.out.println(env.getProperty("env.country"));
 		model.addAttribute("country",env.getProperty("env.country"));
-		return new ModelAndView("home");
+		return new ModelAndView("index");
 	}
 	
 	///
