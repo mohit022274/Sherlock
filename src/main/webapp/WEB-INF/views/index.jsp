@@ -60,7 +60,7 @@
                     <li>
                         <a href="#contact">Contact</a>
                     </li>
-                    <li align="right">
+                    <li align="right"> 
                 		<p style="font-size: 15px;">${country}<img alt="" src="resources/img/${country}.png" width="20px" height="20px" /></p>
                 	</li>
                 </ul>
