@@ -4,8 +4,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Method;
 import java.sql.SQLException;
+<<<<<<< HEAD
 import java.util.Base64;
 import java.util.List;           
+=======
+import java.util.Base64;    
+import java.util.List;
+>>>>>>> 952f759af23c6117e9c7512333e7693509dbb4ee
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
@@ -73,8 +78,14 @@ public class HomeController {
 	
 	///
 	
+<<<<<<< HEAD
 	/////////////////////////////////////////////////////////////////////////////////////////
 	
+=======
+	
+	//////////////////////////////////////////////////////////////////////////////////////////////
+	///sysyi
+>>>>>>> 952f759af23c6117e9c7512333e7693509dbb4ee
 	
 	
 	@RequestMapping(value="/citizen",method=RequestMethod.GET)
@@ -121,7 +132,11 @@ public class HomeController {
 		
 		return new ModelAndView("citizen");
 	}
+<<<<<<< HEAD
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+=======
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+>>>>>>> 952f759af23c6117e9c7512333e7693509dbb4ee
 	
 	@RequestMapping(value="/criminal",method=RequestMethod.GET)
 	public ModelAndView getCriminalDetailsGET(HttpServletRequest request,HttpServletResponse response,Model model){
