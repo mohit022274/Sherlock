@@ -81,7 +81,7 @@
                 <div class="col-lg-12">
                     <div class="intro-message">
                         <h1>Sherlock</h1>
-                        <h3>It's on the Tip of the Tongue!!!</h3>
+                        <h3>Any Truth Is Better Than Indefinite Doubt!!!</h3>
                         <hr class="intro-divider">
                         <ul class="list-inline intro-social-buttons">
                             <li>
