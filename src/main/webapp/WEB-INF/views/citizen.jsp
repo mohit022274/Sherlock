@@ -12,7 +12,7 @@
 	<sf:form>
 		<table border="1px">
 			<tr>
-				<th>UIN</th>
+				<th>Citizen ID</th>
 				<th>Name</th>
 				<th>Country</th>
 				<th>DOB</th>
