@@ -2,16 +2,17 @@ package com.psl.SherlockTest;
 
 import static org.junit.Assert.*;
 
-import org.junit.Before;
+import java.math.BigDecimal;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.psl.Sherlock.service.CitizenService;
-import com.psl.Sherlock.service.CreditHistoryService;
-import com.psl.Sherlock.service.CriminalDetailsService;
+import com.psl.Sherlock.dao.ICitizenDAO;
+import com.psl.Sherlock.dao.ICreditHistoryDAO;
+import com.psl.Sherlock.dao.ICriminalDAO;
 
 
 @RunWith(value=SpringJUnit4ClassRunner.class)
@@ -19,30 +20,35 @@ import com.psl.Sherlock.service.CriminalDetailsService;
 public class SherlockTest {	
 
 	@Autowired
-	CitizenService citizen;
+	ICitizenDAO dao;
 	
 	@Autowired
-	CriminalDetailsService  criminal;
+	ICriminalDAO criminalDAO;
 	
 	@Autowired
-	CreditHistoryService ch;	
-
+	ICreditHistoryDAO credtD_DAO;
 	
 	@Test
 	public void getCitizenDetailsTest(){
 		System.out.println(".........................Testing CitizenDetails Module...........................");
-		assertEquals("class com.psl.Sherlock.service.CitizenService", citizen.getClass().toString());
+		
+		assertEquals("class com.psl.Sherlock.entity.Citizen", dao.getCitizenDetails("1234").getClass().toString());
+		assertTrue(dao.getCitizenDetails("1234").getUIN()!=null);
 	}
 
 	@Test
 	public void getCriminalDetailsTest(){
 		System.out.println(".........................Testing CriminalDetails Module...........................");
-		assertEquals("class com.psl.Sherlock.service.CriminalDetailsService", criminal.getClass().toString());
+		
+		assertTrue(criminalDAO.getCriminalDetails("1234").size()>0);
+		assertTrue(criminalDAO.getCriminalDetails("1234").get(0).getCrimeId()!=new BigDecimal("0"));
 	}
 	
 	@Test
 	public void getCreditHistoryDetailsTest(){
 		System.out.println(".........................Testing CeditHistoryDetails Module...........................");
-		assertEquals("class com.psl.Sherlock.service.CreditHistoryService", ch.getClass().toString());
-	}	
+
+		assertEquals(1, credtD_DAO.getCreditHistoryDetails("123").size());
+		assertTrue(credtD_DAO.getCreditHistoryDetails("123").get(0).getCreditHistoryID()!=null);
+	}
 }

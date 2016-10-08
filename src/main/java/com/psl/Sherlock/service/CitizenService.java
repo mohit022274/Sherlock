@@ -22,6 +22,7 @@ public class CitizenService {
 
 	public Citizen getCitizenDetails(String id){
 		//System.out.println(country+" "+id);
+		
 		Citizen citizen=dao.getCitizenDetails(id);
 		return citizen;
 	}

@@ -9,7 +9,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
 
-<context:component-scan base-package="com.psl.Sherlock.service" />
+<context:component-scan base-package="com.psl.SherlockTest" />
 
 <context:property-placeholder location="classpath:env.properties"/>
 <mvc:annotation-driven />
@@ -26,27 +26,27 @@
 		<property name="dataSource" ref="ds"></property>
 	</bean>
 	
-	<bean class="com.psl.Sherlock.dao.CitizenDAOImpl" id="citizenDAO">
-		<property name="template" ref="template"></property>
+	<bean class="com.psl.SherlockTest.CitizenDAOStub" id="citizenDAOStub">
+<!-- 		<property name="template" ref="template"></property> -->
 	</bean>
 	
 	
-	<bean class="com.psl.Sherlock.dao.CriminalDAOImpl" id="criminalDAO">
-		<property name="template" ref="template"></property>
+	<bean class="com.psl.SherlockTest.CriminalDetailsDAOStub" id="criminalDAOStub">
+<!-- 		<property name="template" ref="template"></property> -->
 	</bean>
 	
-	<bean class="com.psl.Sherlock.dao.CreditHistoryDAOImpl" id="creditHistoryDAO">
-		<property name="template" ref="template"></property>
+	<bean class="com.psl.SherlockTest.CreditHistoryDetailsDAOStub" id="creditHistoryStub">
+<!-- 		<property name="template" ref="template"></property> -->
 	</bean>
 	
 	
-	<bean class="com.psl.Sherlock.service.CitizenService" id="citizen_service">
-		<property name="dao" ref="citizenDAO"></property>
-	</bean>
-	<bean class="com.psl.Sherlock.service.CriminalDetailsService" id="criminal_details_service">
-		<property name="dao" ref="criminalDAO"></property>
-	</bean>
-	<bean class="com.psl.Sherlock.service.CreditHistoryService" id="credit_history_service">
-		<property name="dao" ref="creditHistoryDAO"></property>
-	</bean>
+<!-- 	<bean class="com.psl.Sherlock.service.CitizenService" id="citizen_service"> -->
+<!-- 		<property name="dao" ref="citizenDAO"></property> -->
+<!-- 	</bean> -->
+<!-- 	<bean class="com.psl.Sherlock.service.CriminalDetailsService" id="criminal_details_service"> -->
+<!-- 		<property name="dao" ref="criminalDAO"></property> -->
+<!-- 	</bean> -->
+<!-- 	<bean class="com.psl.Sherlock.service.CreditHistoryService" id="credit_history_service"> -->
+<!-- 		<property name="dao" ref="creditHistoryDAO"></property> -->
+<!-- 	</bean> -->
 </beans>
