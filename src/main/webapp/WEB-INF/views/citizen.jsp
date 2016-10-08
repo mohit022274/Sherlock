@@ -6,35 +6,56 @@
 <head>    
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-</head>
-<body>
-	<h2>Citizen Details:</h2>
-	<sf:form>
-		<table border="1px">
-			<tr>
-				<th>Citizen ID</th>
-				<th>Name</th>
-				<th>Country</th>
-				<th>DOB</th>
-				<th>Height</th>
-				<th>Weight</th>
-				<th>Skin Color</th>
-				<th>Email</th>
-				<th>Photo</th>
-			</tr>
-			<tr>
-				<td>${citizen.getUIN()}</td>
-				<td>${citizen.getF_name()}</td>
-				<td>${citizen.getCountry()}</td>
-				<td>${citizen.getDob()}</td>
-				<td>${citizen.getHeight()}</td>
-				<td>${citizen.getWeight()}</td>
-				<td>${citizen.getSkin_color()}</td>
-				<td>${citizen.getEmail()}</td>
-				<td><img alt="" src="data:image/gif;base64,${imgDataBase64}" width="250" height="250"></td>
+<link href="resources/css/table.css" rel="stylesheet">
+</head>	
 
-			</tr>
+<body id="b">
+	<h2 style="font-size: 18px;color: white;"><a href="/Sherlock/" style="color: white;">Back To Home</a></h2>
+	<sf:form>
+		<h1>Citizen Details</h1>
+		<div id="wrapper">
+			<table id="keywords" class="tbl1" cellspacing="0" cellpadding="0">
+				<thead>
+					<tr>
+						<th>Citizen ID</th>
+						<th>Name</th>
+						<th>Country</th>
+						<th>DOB</th>
+						<th>Height</th>
+						<th>Weight</th>
+						<th>Skin Color</th>
+						<th>Email</th>
+						
+					</tr>
+				</thead>
+			<tbody>
+				<tr>
+					<td class="lalign">${citizen.getUIN()}</td>
+					<td>${citizen.getF_name()}  ${citizen.getL_name()}</td>
+					<td>${citizen.getCountry()}</td>
+					<td>${citizen.getDob()}</td>
+					<td>${citizen.getHeight()}</td>
+					<td>${citizen.getWeight()}</td>
+					<td>${citizen.getSkin_color()}</td>
+					<td>${citizen.getEmail()}</td>
+				</tr>
+			</tbody>
 		</table>	
+		
+		</div>
+		<div id="wrapper1">
+			<table id="keywords" class="tbl2" cellspacing="0" cellpadding="0">
+				<thead>
+					<tr>
+						<th>Photo</th>
+					</tr>
+				</thead>
+				<tr>
+					<td><img alt="" src="data:image/gif;base64,${imgDataBase64}" width="170px" height="130px"></td>
+				</tr>
+			</table>
+		</div>
+		
 	</sf:form>
 </body>
 </html>

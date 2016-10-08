@@ -5,24 +5,29 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link href="resources/css/table.css" rel="stylesheet">
 <title>Insert title here</title>
 </head>
 <body>
-Welcome to credit history!!!!
-
-		<table border="1px">
-		<tr>
-			<th>Credit History ID</th>
-			<th>Bank Name</th>
-			<th>Branch</th>
-			<th>Loan Amount</th>
-			<th>Guaranteer ID</th>
-			<th>Credibility</th>
-			<th>Customer ID</th>
-		</tr>	
-			<js:forEach var="obj" items="${credit_history}">
-				<tr>
-				<td>${obj.getCreditHistoryID()}</td>
+<h2 style="font-size: 18px;color: white;"><a href="/Sherlock/" style="color: white;">Back To Home</a></h2>
+<h1>CREDIT HISTORY</h1>
+<div id="wrapper">
+		<table id="keywords" class="tbl1" cellspacing="0" cellpadding="0">
+		<thead>
+			<tr>
+				<th>Credit History ID</th>
+				<th>Bank Name</th>
+				<th>Branch</th>
+				<th>Loan Amount</th>
+				<th>Guaranteer ID</th>
+				<th>Credibility</th>
+				<th>Customer ID</th>
+			</tr>
+		</thead>
+		<js:forEach var="obj" items="${credit_history}">
+		<tbody>
+			<tr>
+				<td class="lalign">${obj.getCreditHistoryID()}</td>
 				<td>${obj.getBankName()}</td>
 				<td>${obj.getBranch()}</td>
 				<td>${obj.getLoanAmount()}</td>
@@ -30,8 +35,10 @@ Welcome to credit history!!!!
 				<td>${obj.getCredibility()}</td>
 				<td>${obj.getCustomerID()}</td>
 <%-- 				<a href="http://localhost:8080/bloodbank/${ obj.getName()}"><li>${obj.getName()}</li></a> --%>
-				<tr>
-			</js:forEach>
+			<tr>
+		<tbody>
+		</js:forEach>
 		</table>
+	</div>
 </body>
 </html>
