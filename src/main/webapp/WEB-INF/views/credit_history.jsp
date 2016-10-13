@@ -9,8 +9,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2 style="font-size: 18px;color: white;"><a href="/Sherlock/" style="color: white;">Back To Home</a></h2>
-<h1>CREDIT HISTORY</h1>
+<h2 style="font-size: 18px;color: white;"><a href="/Sherlock/" style="color: #00FFFF;">Back To Home</a></h2>
+<h1 class="font-effect-3d font-effect-grass" style="color:green;">CREDIT HISTORY</h1>
 <div id="wrapper">
 		<table id="keywords" class="tbl1" cellspacing="0" cellpadding="0">
 		<thead>
