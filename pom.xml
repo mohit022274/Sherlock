@@ -349,9 +349,7 @@
 					</plugin>
 					<plugin>
 						<artifactId>maven-surefire-plugin</artifactId>
-						<configuration>
-							<skip>true</skip>
-						</configuration>
+						
 					</plugin>
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
@@ -411,9 +409,7 @@
 					</plugin>
 					<plugin>
 						<artifactId>maven-surefire-plugin</artifactId>
-						<configuration>
-							<skip>true</skip>
-						</configuration>
+						
 					</plugin>
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
@@ -535,9 +531,7 @@
 					</plugin>
 					<plugin>
 						<artifactId>maven-surefire-plugin</artifactId>
-						<configuration>
-							<skip>true</skip>
-						</configuration>
+					
 					</plugin>
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
@@ -598,9 +592,7 @@
 					</plugin>
 					<plugin>
 						<artifactId>maven-surefire-plugin</artifactId>
-						<configuration>
-							<skip>true</skip>
-						</configuration>
+						
 					</plugin>
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
@@ -660,9 +652,7 @@
 					</plugin>
 					<plugin>
 						<artifactId>maven-surefire-plugin</artifactId>
-						<configuration>
-							<skip>true</skip>
-						</configuration>
+						
 					</plugin>
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
@@ -722,9 +712,7 @@
 					</plugin>
 					<plugin>
 						<artifactId>maven-surefire-plugin</artifactId>
-						<configuration>
-							<skip>true</skip>
-						</configuration>
+						
 					</plugin>
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
@@ -785,9 +773,7 @@
 					</plugin>
 					<plugin>
 						<artifactId>maven-surefire-plugin</artifactId>
-						<configuration>
-							<skip>true</skip>
-						</configuration>
+						
 					</plugin>
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
@@ -849,9 +835,7 @@
 					</plugin>
 					<plugin>
 						<artifactId>maven-surefire-plugin</artifactId>
-						<configuration>
-							<skip>true</skip>
-						</configuration>
+						
 					</plugin>
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
