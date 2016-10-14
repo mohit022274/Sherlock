@@ -16,7 +16,7 @@ import com.psl.Sherlock.dao.ICriminalDAO;
 
 
 @RunWith(value=SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations="SpringDispatcherTest-servlet.xml")
+@ContextConfiguration(locations = "SpringDispatcherTest-servlet.xml")
 public class SherlockTest {	
 
 	@Autowired
