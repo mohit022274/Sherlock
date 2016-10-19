@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Base64;
 
 for
+fore each
 
 import java.util.List;
 import javax.servlet.ServletOutputStream;
