@@ -35,7 +35,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.support.XmlWebApplicationContext;
 
 
-
 import org.springframework.web.servlet.ModelAndView;
 import com.psl.Sherlock.entity.Citizen;
 import com.psl.Sherlock.entity.CreditHistory;
