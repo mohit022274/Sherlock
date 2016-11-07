@@ -10,7 +10,7 @@
     </head>
     <body>
         <h1>Welcome to Sherlock</h1><p align="right">${country}    
-        	 <img alt="" src="http://localhost:8080/Sherlock/resources/images/${country}.png" width="20px" height="20px"  />
+        	 <!-- <img alt="" src="http://localhost:8080/Sherlock/resources/images/${country}.png" width="20px" height="20px"  /> -->
         </p>
         <ul>
         	<li><a href="http://localhost:8080/Sherlock/citizen">Citizen</a></li>
