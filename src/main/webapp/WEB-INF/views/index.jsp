@@ -83,7 +83,6 @@
                     <div class="intro-message">
                         <h1 >Sherlock</h1>
 
-
                         <h3>Any Truth Is Better Than Indefinite Doubt!!!</h3>
                         <hr class="intro-divider">
                         <ul class="list-inline intro-social-buttons">
