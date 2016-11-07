@@ -81,7 +81,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-message">
-                        <h1 style="color:blue;">Sherlock</h1>
+                        <h1 style="color:black;">Sherlock</h1>
 
 
                         <h3>Any Truth Is Better Than Indefinite Doubt!!!</h3>
