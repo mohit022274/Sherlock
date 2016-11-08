@@ -49,7 +49,7 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            	
+                
                 <ul class="nav navbar-nav navbar-right">                
                     <li>
                         <a href="#about">About</a>
@@ -61,8 +61,8 @@
                         <a href="#contact">Contact</a>
                     </li>
                     <li align="right"> 
-                		<p style="font-size: 15px;">${country}<img alt="" src="resources/img/${country}.png" width="20px" height="20px" /></p>
-                	</li>
+                        <p style="font-size: 15px;">${country}<img alt="" src="resources/img/${country}.png" width="20px" height="20px" /></p>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -74,15 +74,13 @@
     <!-- Header -->
     <a name="about"></a>
     <div class="intro-header">
-    	
-        <div class="container">
-			
+        
+        <div class="container">            
 
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-message">
-
-                        <h1 style="color:white;">Sherlock</h1>
+                        <h1 style="color:blue;">Sherlock</h1>
 
                         <h3>Any Truth Is Better Than Indefinite Doubt!!!</h3>
                         <hr class="intro-divider">
