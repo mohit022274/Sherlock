@@ -81,11 +81,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-message">
-<<<<<<< HEAD
+
                         <h1 style="color:white;">Sherlock</h1>
-=======
-                        <h1 style="color:blue;">Sherlock</h1>
->>>>>>> 677f36fe84492a446ff17a37a658f5209ad14bdc
 
                         <h3>Any Truth Is Better Than Indefinite Doubt!!!</h3>
                         <hr class="intro-divider">
