@@ -105,6 +105,7 @@ public class HomeController {
 		
 		System.out.println("Welcome Citizen Search" );
 		System.out.println("Welcome Citizen Search this is search for citizen" );
+		System.out.println("**********************************" );
 		initializeContext(request);
 		String country="in";
 		c_service=(CitizenService)context.getBean("citizen_service");
