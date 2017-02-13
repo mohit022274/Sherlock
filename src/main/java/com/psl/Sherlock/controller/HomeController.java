@@ -91,6 +91,7 @@ public class HomeController {
 		System.out.println( request.getSession().getServletContext().getRealPath(""));
 		
 		System.out.println("Welcome Citizen Search" );
+		System.out.println("Welcome Citizen Search this is search for citizen" );
 		initializeContext(request);
 		String country="in";
 		c_service=(CitizenService)context.getBean("citizen_service");
