@@ -13,7 +13,7 @@
         	 <img alt="" src="http://localhost:8080/Sherlock/resources/images/${country}.png" width="20px" height="20px"  />
         </p>
         <ul>
-        	<li><a href="http://localhost:8080/Sherlock/citizen">Citizen</a></li>
+        	<li><a href="http://localhost:8080/Sherlock/citizen">Citizeni</a></li>
         	<li><a href="http://localhost:8080/Sherlock/criminal">Criminal</a></li>
         	<li><a href="http://localhost:8080/Sherlock/credit">Credit</a></li>
         </ul>
