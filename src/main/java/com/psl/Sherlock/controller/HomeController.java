@@ -67,7 +67,7 @@ public class HomeController {
 	private XmlWebApplicationContext context;
 	
 	public void initializeContext(HttpServletRequest request){
-		System.out.println("file initialized...");
+		System.out.println("file initialized... second time");
 		System.out.println("file initialized  ****...");
 		context = new  XmlWebApplicationContext();
 		context.setConfigLocation("/WEB-INF/SpringDispatcher-servlet.xml");
