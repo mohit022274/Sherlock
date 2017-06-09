@@ -61,7 +61,7 @@
                         <a href="#services">Services</a>
                     </li>
                     <li>
-                        <a href="#contact">Contacts</a>
+                        <a href="#contact">Contactssss</a>
                     </li>
                     <li align="right"> 
                         <p style="font-size: 15px;">${country}<img alt="" src="resources/img/${country}.png" width="20px" height="20px" /></p>
