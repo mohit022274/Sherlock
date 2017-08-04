@@ -84,7 +84,7 @@
                     <div class="intro-message">
                         <h1 style="color:white;">Sherlock 4th Aug</h1>
 
-                        <h3>Any Truth Is Better Than Indefinite Doubt!!!!  !!!!!    Star </h3>
+                        <h3>Any Truth Is Better Than Indefinite Doubt!!!!  !!!!!    Star  </h3>
                         <hr class="intro-divider">
                         <ul class="list-inline intro-social-buttons">
                             <li>
