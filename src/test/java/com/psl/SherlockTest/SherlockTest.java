@@ -33,7 +33,7 @@ public class SherlockTest {
 		System.out.println(".........................Testing CitizenDetails Module...........................");
 		
 		assertEquals("class com.psl.Sherlock.entity.Citizen", dao.getCitizenDetails("1234").getClass().toString());
-		assertTrue(dao.getCitizenDetails("12345").getUIN()!=null);
+		assertTrue(dao.getCitizenDetails("1234").getUIN()!=null);
 	}
 
 	@Test
