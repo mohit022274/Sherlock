@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Welcome to Sherlock - the investigation app 1234  </h1><p align="right">${country}11    
+        <h1>Welcome to Sherlock - the investigation app 1234    </h1><p align="right">${country}11    
         	 <img alt="" src="http://localhost:8080/Sherlock/resources/images/${country}.png" width="20px" height="20px"  />
         </p>
         <ul>
